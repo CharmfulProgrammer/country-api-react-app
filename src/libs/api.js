@@ -16,7 +16,9 @@ export const getCountry = async (alpha) => {
 
 export const getCountriesName = async (alphas) => {
   const res = await fetch(
-    `https://restcountries.com/v3.1/alpha/?codes=${alphas.join(",")}fields=name`
+    `https://restcountries.com/v3.1/alpha/?codes=${alphas.join(
+      ","
+    )}&fields=name`
   );
   const data = await res.json();
   return data;
