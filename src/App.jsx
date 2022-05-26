@@ -7,10 +7,12 @@ function App() {
   return (
     <Router>
       <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/:id" element={<Details />}></Route>
-      </Routes>
+      <main className="flex justify-center">
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/:id" element={<Details />}></Route>
+        </Routes>
+      </main>
     </Router>
   )
 }

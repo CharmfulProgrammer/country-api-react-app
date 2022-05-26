@@ -8,7 +8,7 @@ export const getAllCountries = async () => {
 
 export const getCountry = async (alpha) => {
   const res = await fetch(
-    `https://restcountries.com/v3.1/alpha/${alpha}?fields=name,population,region,subregion,capital,tld,currencies,languages,borders`
+    `https://restcountries.com/v3.1/alpha/${alpha}?fields=flags,name,population,region,subregion,capital,tld,currencies,languages,borders`
   );
   const data = await res.json();
   return data;
