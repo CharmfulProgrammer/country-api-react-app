@@ -11,14 +11,15 @@ const Details = () => {
             setData(data)
         })
     }, []);
+    if(!data.name) return
     return (
         <div>
             <div className="m-auto w-3/4">
                 <div className="shadow">
-                    <img src={data.flags?.svg} alt="" />
+                    <img src={data.flags.svg} alt="" />
                 </div>
-                <h1 className="text-xl font-bold">{data.name?.official}</h1>
-                {Object.values(data?.name?.nativeName || {}).map(name => (
+                <h1 className="text-xl font-bold">{data.name.official}</h1>
+                {Object.values(data.name.nativeName || {}).map(name => (
                     <span>{name.common}</span>
                 ))}
             </div>

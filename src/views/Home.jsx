@@ -13,10 +13,14 @@ const Home = () => {
             setFilteredCountries(data)
         })
     }, [])
+    useEffect(() => {
+        console.log(filteresCountries)
+    }, [filteresCountries])
+    if(!countries.length) return 
     return (
         <div className="w-3/4 md:w-full max-w-screen-xl">
             <div>
-                <SearchBar setFilteredCountries={setFilteredCountries} countries={countries}/>
+                <SearchBar {...{setFilteredCountries, countries}}/>
             </div>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-16">
                 {filteresCountries.map(country => (

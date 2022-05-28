@@ -1,10 +1,10 @@
 const SearchBar = ({setFilteredCountries, countries}) => {
     function handleFilteredCountries(e) {
-        setFilteredCountries(countries.filter(country => country.include(e.target.value)))
+        setFilteredCountries(countries.filter(country => country.name.common.toLowerCase().includes(e.target.value.toLowerCase())))
     }
     return (
         <div>
-            <input type="text" placeholder="Search for a country" className="focus:outline-none" onChange={(e) => handleFilteredCountries(e)}/>
+            <input type="text" placeholder="Search for a country" className="focus:outline-none" onInput={handleFilteredCountries}/>
         </div>
     )
 }
