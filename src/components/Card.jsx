@@ -15,9 +15,15 @@ const Card = ({ flags, name, population, region, capital, cca3 }) => {
       </div>
       <div className="flex flex-col p-5">
         <h2 className="py-3 font-bold text-xl">{name.common}</h2>
-        <p className="font-bold">Population:</p> {numberWithCommas(population)}
-        <p className="font-bold">Region:</p> {region}
-        <p className="font-bold">Capital:</p> {capital}
+        <p>
+          <span className="font-bold">Region:</span> {region}
+        </p>
+        <p>
+          <span className="font-bold">Population:</span> {numberWithCommas(population)}
+        </p>
+        <p>
+          <span className="font-bold">Capital:</span> {capital}
+        </p>
       </div>
     </div>
   );

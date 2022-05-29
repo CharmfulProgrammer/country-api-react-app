@@ -10,8 +10,7 @@ const Details = () => {
         .then(data => {
             setData(data)
         })
-    }, []);
-    if(!data.name) return
+    }, [])
     return (
         <div>
             <div className="m-auto w-3/4">
