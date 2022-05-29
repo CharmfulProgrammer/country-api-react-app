@@ -21,7 +21,10 @@ const Home = () => {
           setFilteredCountries={setFilteredCountries}
           countries={countries}
         />
-        <Filter/>
+        <Filter
+          setFilteredCountries={setFilteredCountries}
+          countries={countries}
+        />
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16">
         {filteredCountries.map((country) => (
