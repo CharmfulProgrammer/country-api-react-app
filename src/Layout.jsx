@@ -5,8 +5,8 @@ const Layout = () => {
   const [darkMode, setDarkMode] = useState(false)
   return (
     <div className={darkMode ? "dark" : ""}>
-      <Navbar />
-      <main className="flex justify-center bg-slate-50">
+      <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
+      <main className="flex justify-center bg-slate-50 dark:bg-gray-900">
         <Outlet />
       </main>
     </div>

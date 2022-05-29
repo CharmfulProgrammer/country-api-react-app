@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ flags, name, population, region, capital, cca3 }) => {
   return (
-    <div className="shadow rounded overflow-hidden bg-white">
+    <div className="shadow rounded overflow-hidden bg-white dark:bg-gray-800 dark:text-white">
       <div>
         <Link to={cca3}>
           <img

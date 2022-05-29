@@ -10,7 +10,7 @@ const useBindValues = (arr) => {
         : setValues(values.filter((val) => val !== value));
     };
   }
-  return values, handleValues;
+  return [values, handleValues];
 };
 
 export default useBindValues;
