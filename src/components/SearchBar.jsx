@@ -11,14 +11,14 @@ const SearchBar = ({ setFilteredCountries, countries }) => {
       );
     }, 200);
   return (
-    <div className="flex p-2 px-5 shadow rounded items-center">
+    <div className="flex p-2 px-5 shadow rounded items-center bg-white">
       <span>
         <BiSearchAlt/>
       </span>
       <input
         type="text"
         placeholder="Search for a country"
-        className="ml-1 focus:outline-none"
+        className="ml-1 bg-transparent focus:outline-none focus:border-b-2 border-blue-700"
         onInput={handleCountries}
       />
     </div>
