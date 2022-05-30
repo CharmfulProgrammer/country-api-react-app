@@ -7,13 +7,17 @@ const Details = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
   const [loaded, setLoaded] = useState(false);
-  const [nativeName, setNativeName] = useState("")
+  const [nativeNames, setNativeNames] = useState([])
+  const [currencies, setCurrencies] = useState([])
+  const [languages, setLanguages] = useState([])
   useEffect(() => {
     getCountry(id)
       .then((data) => {
         setData(data);
         setLoaded(true);
-        setNativeName(data.name.nativeName[Object.keys(data.name.nativeName)[0]].common)
+        setNativeNames(Object.keys(data.name.nativeName).map(n => data.name.nativeName[n].common))
+        setCurrencies(Object.keys(data.currencies).map(m => data.currencies[m].name))
+        setLanguages(Object.values(data.languages))
       })
       .catch(() => {});
   }, []);
@@ -36,13 +40,17 @@ const Details = () => {
             <h1>{data.name.common}</h1>
           </header>
           <section>
-            <p>Native Name: {nativeName}</p>
+            <p>Native Names: {nativeNames.join(", ")}</p>
             <p>Population: {numberWithComma(data.population)}</p>
             <p>Region: {data.region}</p>
             <p>Sub Region: {data.subregion}</p>
             <p>Capital: {data.capital}</p>
           </section>
-          <section></section>
+          <section>
+            <p>Top Level Domain: {data.tld.join(", ")}</p>
+            <p>Currencies: {currencies.join(", ")}</p>
+            <p>Languages: {languages.join(", ")}</p>
+          </section>
         </article>
       </div>
     </div>
