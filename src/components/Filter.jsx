@@ -23,9 +23,9 @@ const Filter = ({ setFilteredCountries, countries }) => {
   }, [region]);
   return (
     <fieldset className="relative bg-white dark:bg-gray-800 dark:text-white p-2 px-5 shadow rounded">
-      <div className="flex items-center">
-        <h3 className="mr-1">Filter by Region</h3>
-        <button className="text-xl" onClick={() => setDropped(!dropped)}>
+      <div className="flex items-center justify-between hover:cursor-pointer" onClick={() => setDropped(!dropped)}>
+        <h3>Filter by Region</h3>
+        <button className="text-xl">
           {dropped ? <RiArrowDropUpLine /> : <RiArrowDropDownLine />}
         </button>
       </div>

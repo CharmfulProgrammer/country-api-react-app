@@ -7,15 +7,17 @@ import Filter from "../components/Filter";
 const Home = () => {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     getAllCountries().then((data) => {
       setCountries(data);
       setFilteredCountries(data);
+      setLoaded(true);
     });
   }, []);
-  if (!countries.length) return;
+  if(!loaded) return
   return (
-    <div className="w-11/12 max-w-screen-lg">
+    <div className="w-10/12 max-w-screen-lg">
       <div className="flex flex-col md:flex-row justify-between my-3">
         <SearchBar
           setFilteredCountries={setFilteredCountries}

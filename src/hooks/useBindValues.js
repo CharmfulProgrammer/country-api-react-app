@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const useBindValues = (arr) => {
-  const [values, setValues] = useState(arr || []);
+const useBindValues = (arr = []) => {
+  const [values, setValues] = useState(arr);
   function handleValues(value) {
     return (e) => {
       const isChecked = e.target.checked;
