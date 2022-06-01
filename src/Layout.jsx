@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <div className={theme + " min-h-screen flex flex-col"}>
       <Navbar toggleTheme={toggleTheme} theme={theme}/>
-      <main className="grow flex justify-center bg-slate-50 dark:bg-gray-900">
+      <main className="grow flex justify-center bg-slate-200 dark:bg-gray-900">
         <Outlet />
       </main>
     </div>
